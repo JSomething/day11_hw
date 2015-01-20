@@ -1,0 +1,20 @@
+<h1>THE BETTER BLOG</h1>
+
+<%= link_to "New Blog Entry", new_blog_path %>
+
+<% @blogs.each do |blog| %>
+<ul>
+	<li>
+		<%= link_to blog.title, blog_path(blog) %>
+		<br>
+		<%= blog.subject %>
+		<br>
+		<%= link_to "Edit", edit_blog_path(blog) %>
+		<%= link_to "Delete", blog_path(blog), method: :delete %>
+		<br>
+		<i>Created: <%= blog.created_at %></i>
+		<br>
+		<i>Updated: <%= blog.updated_at %></i>
+	</li>
+</ul>
+<% end %>
