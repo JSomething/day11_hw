@@ -1,6 +1,8 @@
 <% provide(:pagetitle, "Edit") %>
 <h1>EDIT ENTRY</h1>
 
+<%= link_to "Back to Home", root_path %>
+
 <%= form_for @blog do |b| %>
 	<%= b.label :Title %>
 	<%= b.text_field :title %>

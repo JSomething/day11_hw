@@ -1,8 +1,10 @@
 <% provide(:pagetitle, @blog.title) %>
 <h1><%= @blog.title %></h1>
 <br>
-<i><%= @blog.subject %></i>
-<br>
-<%= @blog.content %>
+<dl>
+	<dt><%= @blog.subject %></dt>
+	<br>
+	<dd><%= @blog.content %></dd>
+</dl>
 
 <%= link_to "Back", root_path %>
