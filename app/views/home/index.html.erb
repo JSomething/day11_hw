@@ -6,11 +6,12 @@
 </div>
 
 <% @blogs.each do |blog| %>
-<ul>
-	<li>
+<ul class="list-group">
+	<li class="list-group-item">
 		<%= link_to blog.title, blog_path(blog) %>
 		<br>
 		<%= blog.subject %>
+		<br>
 		<br>
 		<%= link_to "Edit", edit_blog_path(blog) %> | 
 		<%= link_to "Delete", blog_path(blog), method: :delete %>
