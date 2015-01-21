@@ -1,6 +1,9 @@
-<h1>THE BETTER BLOG</h1>
+<% provide(:pagetitle, "Home") %>
+<div class="center jumbotron">
+	<h1>THE BETTER BLOG</h1>
 
-<%= link_to "New Blog Entry", new_blog_path %>
+	<%= link_to "New Blog Entry", new_blog_path, class: "btn btn-lg btn-primary" %>
+</div>
 
 <% @blogs.each do |blog| %>
 <ul>
@@ -14,7 +17,7 @@
 		<br>
 		<i>Created: <%= blog.created_at %></i>
 		<br>
-		<i>Updated: <%= blog.updated_at %></i>
+		<i>Updated: <%= time_ago_in_words(blog.updated_at) %> ago</i>
 	</li>
 </ul>
 <% end %>
